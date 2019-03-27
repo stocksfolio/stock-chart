@@ -24,3 +24,6 @@ coverage
 build/
 dist/
 
+# Examples of code from Hack Reactor
+example/
+
