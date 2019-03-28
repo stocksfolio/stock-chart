@@ -1,0 +1,21 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/hrsf114-front-end-capstone
+    docker:
+      - image: circleci/node:4.8.2
+      - image: mongo:3.4.4
+    steps:
+      - checkout
+      - run:
+          name: update-npm
+          command: 'sudo npm install -g npm'
+      - run:
+          name: install-dependencies
+          command: 'npm run build'
+      - run:
+          name: run-tests
+          command: 'npm test'
+      - store_artifacts:
+          path: test-results.xml
+          prefix: test
