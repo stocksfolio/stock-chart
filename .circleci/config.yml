@@ -12,7 +12,7 @@ jobs:
           command: 'sudo npm install -g npm'
       - run:
           name: install-dependencies
-          command: 'npm run build'
+          command: 'npm install'
       - run:
           name: run-tests
           command: 'npm test'
