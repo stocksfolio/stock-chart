@@ -1,6 +1,6 @@
 {
   "name": "stock-chart",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "The stock shart on Robinhood",
   "author": "Muhammad Shehu",
   "license": "",
@@ -10,7 +10,9 @@
   "scripts": {
     "start": "webpack-dev-server --open --mode development",
     "build": "webpack --mode production",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch",    
+    "test:coverage": "jest --coverage --colors"
   },
   "dependencies": {
     "react": "^16.8.5",

@@ -13,6 +13,7 @@ class App extends React.Component {
     return (
       <div>
         {this.helloWorld};
+        <img src='../assets/images/men-in-tights.jpg'/>
       </div>
     );
   }
