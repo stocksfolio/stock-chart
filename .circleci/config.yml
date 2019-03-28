@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/hrsf114-front-end-capstone
     docker:
-      - image: circleci/node:4.8.2
+      - image: circleci/node:10.0.0
       - image: mongo:3.4.4
     steps:
       - checkout
