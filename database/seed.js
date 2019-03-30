@@ -9,7 +9,7 @@ for (let i = 0; i < 100; i++) {
 
 const insertStockData = function() {
   StockChart.create(stockData)
-    .then(() => db.disconnect());
+    .then(() => db.close());
 };
 
 insertStockData();
