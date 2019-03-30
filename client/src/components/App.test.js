@@ -12,6 +12,6 @@ function setup() {
 describe('App Test', () => {
   it('Should have an image', () => {
     const { wrapper } = setup();
-    expect(wrapper.find('img').exists()).toBe(true);
+    expect(wrapper.find('div').exists()).toBe(true);
   });
 });

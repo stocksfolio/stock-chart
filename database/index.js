@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const mongoUri = 'mongodb://localhost/stock-chart';
 
-const db = mongoose.connect(mongoUri);
+mongoose.connect(mongoUri);
+const db = mongoose.connection;
 
 module.exports = db;
