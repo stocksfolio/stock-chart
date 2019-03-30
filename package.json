@@ -1,20 +1,27 @@
 {
   "name": "stock-chart",
   "version": "1.0.0",
-  "description": "The stock shart on Robinhood",
+  "description": "The stock chart on Robinhood",
   "author": "Muhammad Shehu",
   "license": "",
   "engines": {
     "node": ">=6.13.0"
   },
   "scripts": {
-    "start": "webpack-dev-server --open --mode development",
+    "start": "webpack --mode development --watch",
+    "start:server": "nodemon server/index.js",
     "build": "webpack --mode production",
+    "seed": "node database/seed.js",
     "test": "jest",
-    "test:watch": "jest --watch",    
+    "test:watch": "jest --watch",
     "test:coverage": "jest --coverage --colors"
   },
   "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "faker": "^4.1.0",
+    "mongoose": "^5.4.20",
+    "path": "^0.12.7",
     "react": "^16.8.5",
     "react-dom": "^16.8.5"
   },
@@ -23,13 +30,18 @@
     "@babel/core": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.11.2",
-    "eslint": "^5.15.3",
+    "eslint": "5.3.0",
+    "eslint-config-airbnb": "17.1.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
     "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jest": "^22.4.1",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-react": "^7.11.0",
     "jest": "^24.5.0",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
