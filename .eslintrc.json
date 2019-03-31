@@ -14,11 +14,10 @@
   },
   "extends": [
     "airbnb",
-    "eslint:recommended",
-    "plugin:import/errors",
-    "plugin:import/warnings"
+    "eslint:recommended"
   ],
   "rules": {
-    "max-len": ["error", { "ignoreComments": true }]
+    "max-len": ["error", { "ignoreComments": true }],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
   }
 }
