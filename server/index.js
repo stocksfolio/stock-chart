@@ -20,8 +20,25 @@ app.get('/api/:stockId', (req, res) => {
   Stocks.find({stockId: req.params.stockId}, (err, data) => {
     if (err) {
       console.log(err.message);
+    } else if (!data.length) {
+      Stocks.find({id: req.params.stockId}, (err, data) => {
+        if (err) {
+          console.log(err.message);
+        } else if (!data.length) {
+          console.log('Data not found');
+          res.sendStatus(404);
+        } else {
+          console.log(`Sending ${req.params.stockId} to client from Id`);
+          res.send(data);
+        }
+      }) 
     } else {
+      console.log(`Sending ${req.params.stockId} to client from ticker`);
       res.send(data);
     }
   }) 
+})
+
+app.get('/:stockId', (req, res) => {
+  res.sendFile(path.join(__dirname, '/../public/dist/index.html'));
 })

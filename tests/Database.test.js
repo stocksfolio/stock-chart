@@ -18,12 +18,12 @@ let dataShape = {
     recommendationPercent: 1,
   },
   stockData: {
-    day: ['Array'],
-    week: ['Array'],
-    month: ['Array'],
-    threeMonth: ['Array'],
-    year: ['Array'],
-    fiveYear: ['Array']
+    day: [1],
+    week: [1],
+    month: [1],
+    threeMonth: [1],
+    year: [1],
+    fiveYear: [1]
   },
   averageStock: 2,
   changePercent: 2
