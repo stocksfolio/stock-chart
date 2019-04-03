@@ -6,7 +6,7 @@ mongoose.Promise = global.Promise;
 
 const stockSchema = new mongoose.Schema({
   id: String,
-  stockId: String,
+  stockId: {type: String, unique: true},
   stockInfo: {
     stockCompany: String,
     relatedTags: Array,

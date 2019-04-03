@@ -6,7 +6,7 @@ module.exports.generateData = (index) => {
     stockId: companyData[index].ticker,
     stockInfo: {
       stockCompany: companyData[index].company,
-      relatedTags: [faker.fake("{{commerce.department}}")],
+      relatedTags: generateTags(generateInBetween(2, 5, 'interger')),
       noOfOwners: faker.random.number(),
       recommendationPercent: generateInBetween(30, 90, 'interger'),
     },
@@ -18,8 +18,8 @@ module.exports.generateData = (index) => {
       year: generateDataPoints(),
       fiveYear: generateDataPoints()
     },
-    averageStock: faker.random.number(),
-    changePercent: faker.random.number()
+    averageStock: generateInBetween(90, 200).toFixed(2),
+    changePercent: generateInBetween(1, 4).toFixed(2)
   }
 };
 
@@ -135,11 +135,21 @@ const generateInBetween = (min, max, type) => {
     return (Math.random() * (max - min)) + min; 
   }
 }
-
+  
 const generateDataPoints = () => {
   let returnArr = [];
-  for (var i = 0; i < 108; i++) {
-    returnArr.push(generateInBetween(30, 200).toFixed(2));
+  returnArr.push(+generateInBetween(50, 200).toFixed(2));
+  for (var i = 0; i < 107; i++) {
+    returnArr.push(Math.abs(generateInBetween(+returnArr[i] - generateInBetween(5, 25, 'interger'), +returnArr[i] + generateInBetween(5, 25, 'interger')).toFixed(2)));
+  }
+  return returnArr;
+}
+
+const generateTags = (number) => {
+  number = number || 3;
+  let returnArr = []
+  for (let i = 0; i < number; i++) {
+    returnArr.push(faker.fake("{{commerce.department}}"));
   }
   return returnArr;
 }
