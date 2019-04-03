@@ -8,8 +8,17 @@ for (let i = 0; i < 100; i++) {
 }
 
 const insertStockData = function() {
-  StockChart.create(stockData)
-    .then(() => db.close());
+  StockChart.init()
+  .then(() => {
+    StockChart.create(stockData)
+      .then(() => db.close())
+      .catch((e) => {
+        console.log('\n \n \n THERE WAS AN ERROR IN THE DATABASE: \n \n \n', e.message);
+      })
+      .then(() => db.close());
+  })
+  
+  
 };
 
 insertStockData();

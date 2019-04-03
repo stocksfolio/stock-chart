@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.0",
+    "axios": "^0.18.0",
     "babel-runtime": "^6.26.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
@@ -30,8 +31,11 @@
     "mongodb": "^3.2.2",
     "mongoose": "^5.4.20",
     "path": "^0.12.7",
+    "prop-types": "^15.7.2",
     "react": "^16.8.5",
-    "react-dom": "^16.8.5"
+    "react-dom": "^16.8.5",
+    "react-router": "^5.0.0",
+    "react-router-dom": "^5.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
