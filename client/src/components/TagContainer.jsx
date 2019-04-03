@@ -14,7 +14,7 @@ const TagContainer = ( {tags} ) => (
 )
 
 TagContainer.propTypes = {
-  tags: PropTypes.arrayOf.isRequired
+  tags: PropTypes.arrayOf(PropTypes.string).isRequired
 };
 
 export default TagContainer;

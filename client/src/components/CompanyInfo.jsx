@@ -1,10 +1,10 @@
 /* eslint-disable max-len */
 import React from 'react';
 
-const CompanyInfo = () => (
+const CompanyInfo = ({companyName, noOfOwners, recommendation}) => (
   <div id='stock-chart-second-row'>
     <div id='stock-chart-company-name'>
-      Tesla
+      {companyName}
     </div>
     <div id="stock-chart-percent-and-owners-container">
       <div id='stock-chart-percent-recommendation'>
@@ -15,7 +15,7 @@ const CompanyInfo = () => (
             </g>
           </svg>
         </div>
-        <span className="stock-chart-company-tags-name sc-black">51%</span>
+        <span className="stock-chart-company-tags-name sc-black">{recommendation}%</span>
       </div>
       <div id='stock-chart-number-of-owners'>
         <div className="sc-icon">
@@ -26,7 +26,7 @@ const CompanyInfo = () => (
             </g>
           </svg>
         </div>
-        <span className="stock-chart-company-tags-name sc-black">234,338</span>
+        <span className="stock-chart-company-tags-name sc-black">{noOfOwners.toLocaleString('en-US')}</span>
       </div>
     </div>
   </div>
