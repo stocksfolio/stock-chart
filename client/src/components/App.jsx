@@ -6,7 +6,6 @@ import CompanyInfo from './CompanyInfo';
 import TagContainer from './TagContainer';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import axios from 'axios';
-import css from '../assets/main.css';
 
 <Route path='/:stockId' component={App} />
 
