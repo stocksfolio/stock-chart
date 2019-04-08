@@ -1,9 +1,13 @@
 import React from 'react';
+import Odometer from 'react-odometerjs';
 
-const StockInfo = ({averageStock, changePercent}) => (
+const StockInfo = ({averageStock, changePercent, currentPrice}) => (
   <div id='stock-chart-company-info-container'>
     <div id='stock-chart-average-stock'>
-      US${averageStock}
+      US$<Odometer 
+      value={currentPrice ? currentPrice : averageStock} 
+      format="(.ddd).dd"
+      duration={10000} />
     </div>
     <div id='stock-chart-percent-change'>
       +US${changePercent} ({(changePercent/averageStock).toFixed(2)}%) 
