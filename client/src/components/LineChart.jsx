@@ -43,7 +43,7 @@ class LineChart extends Component {
       return "L " + this.getSvgX(point.x) + " " + this.getSvgY(point.y) + " ";
     });
     return (
-      <path className="linechart_path" d={pathD} style={{stroke: "#21d19c"}} />
+      <path className="stock-chart-linechart_path" d={pathD} style={{stroke: "#21d19c"}} />
     );
   }
 
@@ -52,7 +52,7 @@ class LineChart extends Component {
     const minY = this.getMinY(), maxY = this.getMaxY();
 
     return (
-      <g className="linechart_axis">
+      <g className="stock-chart-linechart_axis">
         <line
           x1={this.getSvgX(minX)} 
           y1={this.getSvgY(minY)}
@@ -76,7 +76,9 @@ class LineChart extends Component {
     chartData.map(point => {
       svgData.push({
         svgX: this.getSvgX(point.x),
-        svgY: this.getSvgY(point.y)
+        svgY: this.getSvgY(point.y),
+        position: point.x,
+        price: point.y
       });
     });
 
@@ -109,7 +111,7 @@ class LineChart extends Component {
     const pointRadius = 5;
     return (
       <circle
-        className='linechart_point'
+        className='stock-chart-linechart_point'
         style={{stroke: "#FFF"}}
         r={pointRadius}
         cx={this.state.activePoint.svgX}
@@ -119,18 +121,17 @@ class LineChart extends Component {
   }
 
   // MAKE HOVER LINE
-  createLine(){
-    
+  createLine() {
     return (
-      <line className='hoverLine'
+      <line className='stock-chart-hoverLine'
         x1={this.state.hoverLoc} y1={-8}
-        x2={this.state.hoverLoc} y2={this.svgHeight - 20} />
+        x2={this.state.hoverLoc} y2={this.svgHeight} />
     )
   }
 
   render() {
     return (
-      <svg viewBox={`0 0 ${this.svgWidth} ${this.svgHeight}`} className={'linechart'} onMouseLeave={ () => this.stopHover() }
+      <svg viewBox={`0 -10 ${this.svgWidth} ${this.svgHeight + 15}`} className={'linechart'} onMouseLeave={ () => this.stopHover() }
       onMouseMove={ (e) => this.getCoords(e) }>
         {this.makePath()}
         {this.makeAxis()}

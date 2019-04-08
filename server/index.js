@@ -28,12 +28,12 @@ app.get('/api/:stockId', (req, res) => {
           console.log('Data not found');
           res.sendStatus(404);
         } else {
-          console.log(`Sending ${req.params.stockId} to client from Id`);
+          console.log(`Sending ${req.params.stockId} to client`);
           res.send(data);
         }
       }) 
     } else {
-      console.log(`Sending ${req.params.stockId} to client from ticker`);
+      console.log(`Sending ${req.params.stockId} to client`);
       res.send(data);
     }
   }) 

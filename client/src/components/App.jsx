@@ -1,6 +1,5 @@
 import React from 'react';
 import LineChartContainer from './LineChartContainer';
-import ToolTip from './ToolTip';
 import TimeFilter from './TimeFilter';
 import StockInfo from './StockInfo';
 import CompanyInfo from './CompanyInfo';
@@ -19,7 +18,9 @@ class App extends React.Component {
       stockInfo: null,
       averageStock: null,
       changePercent: null,
-      selectedFilter: 'day'
+      selectedFilter: 'day',
+      number: 122,
+      currentPrice: null
     };
   }
   
@@ -43,8 +44,14 @@ class App extends React.Component {
     })
   }
 
+  changeCurrentPrice(activePoint) {
+    this.setState({
+      currentPrice: activePoint ? activePoint.price : null
+    })
+  }
+
   render() {
-    const { chartData, stockInfo, averageStock, changePercent, selectedFilter } = this.state;
+    const { chartData, stockInfo, averageStock, changePercent, selectedFilter, currentPrice } = this.state;
     return (
       <div id="stock-chart-container">
         {stockInfo && (<TagContainer tags={stockInfo.relatedTags} />)}
@@ -59,10 +66,16 @@ class App extends React.Component {
         {stockInfo && (
         <StockInfo 
         averageStock={averageStock}
-        changePercent={changePercent} />)}
+        changePercent={changePercent}
+        currentPrice={currentPrice} />)}
 
-        <ToolTip />
-        {chartData && (<LineChartContainer chart={chartData} selectedChart={selectedFilter} />)}
+        {chartData && (
+        <LineChartContainer 
+        chart={chartData} 
+        selectedChart={selectedFilter} 
+        changePrice={price => this.changeCurrentPrice(price)} />
+        )}
+
         <TimeFilter changeSelectedFilter={e => this.changeSelectedFilter(e)} />
       </div>
     );
