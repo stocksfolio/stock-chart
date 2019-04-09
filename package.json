@@ -24,6 +24,7 @@
     "axios": "^0.18.0",
     "babel-runtime": "^6.26.0",
     "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
     "express": "^4.16.4",
     "faker": "^4.1.0",
     "jest-environment-node": "^24.5.0",
