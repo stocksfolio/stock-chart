@@ -22,7 +22,6 @@ coverage
 
 # Compiled Dirs (http://nodejs.org/api/addons.html)
 build/
-dist/
 
 # Examples of code from Hack Reactor
 example/
