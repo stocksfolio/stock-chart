@@ -32,22 +32,12 @@
 }
 
 
-
-/*
-* === GLOBAL CHANGE ==========================================
-*/
-
-body {
-  font-family: Din Pro;
-}
-
-
-
 /*
 * === GLOBAL CONTAINER =======================================
 */
 
 #stock-chart-container {
+  font-family: Din Pro;
   padding: 5px;
   width: 690px;
   height: auto;
