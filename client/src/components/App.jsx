@@ -1,13 +1,11 @@
 import React from 'react';
+import axios from 'axios';
 import LineChartContainer from './LineChartContainer';
 import TimeFilter from './TimeFilter';
 import StockInfo from './StockInfo';
 import CompanyInfo from './CompanyInfo';
 import TagContainer from './TagContainer';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import API from './api';
-
-<Route path='/:stockId' component={App} />
 
 class App extends React.Component {
   constructor(props) {
@@ -19,7 +17,6 @@ class App extends React.Component {
       averageStock: null,
       changePercent: null,
       selectedFilter: 'day',
-      number: 122,
       currentPrice: null
     };
   }
@@ -27,7 +24,7 @@ class App extends React.Component {
 
   componentDidMount() {
     const { stockId } = this.props.match ? this.props.match.params : { stockId: null };
-    API.get((stockId && `/api/${stockId}`) || `/api/TSLA`)
+    axios.get((stockId && `/api/${stockId}`) || `/api/TSLA`)
     .then((response) => {
       this.setState({
         stockInfo: response.data[0].stockInfo,

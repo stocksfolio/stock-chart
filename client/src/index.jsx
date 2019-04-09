@@ -14,5 +14,5 @@ const AppRouter = () => (
   </Router>
 )
 
-window.AppRouter = App;
-// ReactDOM.render(<AppRouter />, document.getElementById('app'));
+// window.AppRouter = App;
+ReactDOM.render(<AppRouter />, document.getElementById('stock-chart'));

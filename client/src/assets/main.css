@@ -41,7 +41,7 @@
   padding: 5px;
   width: 690px;
   height: auto;
-  border: 0.5px solid black;
+  /* border: 0.5px solid black; */
   display: flex;
   flex-flow: column;
   align-content: space-around;
