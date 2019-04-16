@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const mongoUri = 'mongodb://localhost/stock-chart';
+const mongoUri = 'mongodb://database/stock-chart';
 
 mongoose.connect(mongoUri);
 const db = mongoose.connection;

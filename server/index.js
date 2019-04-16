@@ -6,7 +6,7 @@ const cors = require('cors');
 const Stocks = require('../database/StockChart.js');
 
 const app = express();
-const port = 4000;
+const port = 2468;
 
 app.use(cors());
 app.use(bodyParser.json());

@@ -17,8 +17,6 @@ const insertStockData = function() {
       })
       .then(() => db.close());
   })
-  
-  
 };
 
 insertStockData();
